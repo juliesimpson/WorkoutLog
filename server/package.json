@@ -1,3 +1,6 @@
+// this package.json file allows us to freeze the
+// particular versions of each dependency so that
+// they harmonize together without breaking.
 {
   "name": "workoutlogserver",
   "version": "1.0.0",

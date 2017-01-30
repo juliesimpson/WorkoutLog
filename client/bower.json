@@ -1,3 +1,5 @@
+// bower.json manages front end dependencies
+// jquery & bootstrap dependencies
 {
   "name": "client",
   "description": "",

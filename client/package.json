@@ -1,3 +1,5 @@
+// package.json dictates which dependencies (packages) 
+// the project needs to be install.
 {
   "name": "client",
   "version": "1.0.0",
