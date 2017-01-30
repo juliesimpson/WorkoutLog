@@ -38,6 +38,7 @@ var User = sequelize.define("user", {
 // matches the model we defined
 // Doesn't drop the db, and helps with data persistence
 User.sync();
+// *** DANGER - DON'T USE ***
 // User.sync({force:true}); //drops the table completely
 
 // tells the application to use bodyParser.
