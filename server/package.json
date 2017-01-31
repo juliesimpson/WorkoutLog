@@ -1,6 +1,3 @@
-// this package.json file allows us to freeze the
-// particular versions of each dependency so that
-// they harmonize together without breaking.
 {
   "name": "workoutlogserver",
   "version": "1.0.0",
@@ -8,16 +5,17 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "start": "node ./node_modules/http-server/bin/http-server"
   },
   "author": "Julie Simpson",
   "license": "MIT",
   "dependencies": {
-  	"body-parser": "^1.15.1",
-  	"express": "^4.13.4",
-  	"pg": "^4.5.6",
-  	"pg-hstore": "^2.3.2",
-  	"sequelize": "^3.23.3"
+    "bcryptjs": "^2.4.0",
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^7.2.1",
+    "pg": "^4.5.6",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.23.3"
   }
 }
