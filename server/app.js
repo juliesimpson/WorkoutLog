@@ -12,34 +12,16 @@ var app = express();
 // this package will help the server parse out incoming 
 // requests that are easier to work with.
 var bodyParser = require("body-parser");
-var Sequelize = require("sequelize");
-var sequelize = new Sequelize("workoutlog", "postgres", "Youarein69", {
-	host: "localhost",
-	dialect: "postgres"
-});
 
-sequelize.authenticate().then(
-	function() {
-		console.log("connected to workoutlog postgres db");
+var sequelize = require("./db.js");
 
-	},
-	function(err) {
-		console.log(err);
-	}
-);
-
-// build a user model in sqllize
-var User = sequelize.define("user", {
-	username: Sequelize.STRING,
-	passwordhash: Sequelize.STRING,
-});	
+var User = sequelize.import("./models/user");
 
 // creates the table in postgres
 // matches the model we defined
 // Doesn't drop the db, and helps with data persistence
-User.sync();
-// *** DANGER - DON'T USE ***
-// User.sync({force:true}); //drops the table completely
+User.sync(); // sync( {force: true}) WARNING: This will DROP the table!
+
 
 // tells the application to use bodyParser.
 // body parser will parse data off incoming
