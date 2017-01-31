@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 // We are importing the express module 
 var express = require("express");
 
@@ -28,7 +30,10 @@ User.sync(); // sync( {force: true}) WARNING: This will DROP the table!
 // requests and turn it into JSON.
 // It will take that JSON and expose it to be used for req.body
 app.use(bodyParser.json());
+
 app.use(require("./middleware/headers"));
+app.use(require("./middleware/validate-session"));
+
 app.use("/api/user", require("./routes/user"));
 // login route
 app.use("/api/login", require("./routes/session"));
