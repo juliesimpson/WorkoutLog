@@ -22,8 +22,9 @@ var User = sequelize.import("./models/user");
 // creates the table in postgres
 // matches the model we defined
 // Doesn't drop the db, and helps with data persistence
-User.sync(); // sync( {force: true}) WARNING: This will DROP the table!
-
+//User.sync();
+//User.sync( {force: true}) WARNING: This will DROP the table!
+sequelize.sync();
 
 // tells the application to use bodyParser.
 // body parser will parse data off incoming
@@ -37,6 +38,7 @@ app.use(require("./middleware/validate-session"));
 app.use("/api/user", require("./routes/user"));
 // login route
 app.use("/api/login", require("./routes/session"));
+app.use("/api/definition", require("./routes/definition"));
 app.use("/api/test", function(req, res) {
 	res.send("Hello World");
 });
