@@ -20,6 +20,11 @@ $(function() {
 				// when we log a workout based on category defined.
 				define.done(function(data) {
 					WorkoutLog.definition.userDefinitions.push(data.definition);
+					// clears the form after click "save"
+					$("#def-description").val("");
+					$("#def-logtype").val("");
+					// goes to log result form
+					$("a[href='#log']").tab("show");
 				});
 			},
 			fetchAll: function() {

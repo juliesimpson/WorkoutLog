@@ -34,6 +34,12 @@ $(function(){
 				$("#signup-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
 				$("#loginout").text("Logout");
+
+				// clears form after signup
+				$("#su_username").val("");
+				$("#su_password").val("");
+				// goes to define page after signup
+				$("a[href='#define']").tab("show");
 				
 				}).fail(function() {
 				$("#su_error").text("There was an issue with sign up").show();	
@@ -70,6 +76,13 @@ $(function(){
 					$("#login-modal").modal("hide");
 					$(".disabled").removeClass("disabled");
 					$("#loginout").text("Logout");
+
+					// clears the form
+					$("#li_username").val("");
+					$("#li_password").val("");
+					// goes to define page after login
+					$("a[href='#define']").tab("show");
+
 			}).fail(function() {
 				$("#li_error").text("There was an issue with sign up").show();
 			});

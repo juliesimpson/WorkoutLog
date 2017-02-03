@@ -39,6 +39,11 @@ $(function() {
 
 				logger.done(function(data) {
 					WorkoutLog.log.workouts.push(data);
+					// clears the form after click save
+					$("#log-description").val("");
+					$("#log-result").val("");
+					// goes to history page after save log result
+					$("a[href='#history']").tab("show");
 				});
 			},
 			fetchAll: function() {
